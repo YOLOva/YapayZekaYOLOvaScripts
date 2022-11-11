@@ -1,0 +1,1 @@
+# kaydedilen resimler burada tutulmaktadır

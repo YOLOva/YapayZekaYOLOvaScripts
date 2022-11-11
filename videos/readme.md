@@ -1,0 +1,1 @@
+# resimlere ayrılacak videolar buraya atılmalıdır.
