@@ -5,7 +5,7 @@ videos_path = "./videos"
 save_folder = "./pictures"
 
 for video_path in os.listdir(videos_path):
-    try:
+    try: # video klasöründe video harici bir dosya varsa hata verebilir işlemlerin iptal edilmemesi için try catch
         video_path = f"{videos_path}/{video_path}" # video klasörü
         vidcap = cv2.VideoCapture(video_path) # video yakalanır
         success, image = vidcap.read() #her readte bir resim alınır
