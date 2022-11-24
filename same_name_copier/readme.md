@@ -1,0 +1,1 @@
+2022 teknofest uyz yarışmasında kullandığımız visdrone2019det verisetindeki temizlenmiş ayıklanmış dosyaları tekrar labellerken visdrone2019det orjinal etiket dosyalarından sadece ayıklanmış dosyalarla aynı isimlerdeki dosyaları almak için yazıldı.
