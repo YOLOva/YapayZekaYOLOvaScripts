@@ -1,0 +1,8 @@
+-1 Nothing
+5 sedan - otomobil
+5 minibus - otomobil
+8 truck - kamyon
+5 pickup - otomobil
+7 bus - otobüs
+8 cement truck - kamyon
+8 trailer - tır

@@ -1,0 +1,10 @@
+0 0 pedestrian
+0 1 people
+12 2 bicycle
+5 3 car
+5 4 van
+8 5 truck
+-1 tricycle
+-1 awning-tricycle
+7 bus
+6 motor
