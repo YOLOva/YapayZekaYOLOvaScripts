@@ -24,9 +24,10 @@ for video_path in os.listdir(videos_path):
         count = 0 # sayıcı
         video_save_folder = f"{save_folder}/{video_name}" # resimleri kaydetme klasörü
         Path(video_save_folder).mkdir(exist_ok=True) # kaydedilecek klasör yoksa oluşturur.
+        t_image_per_second = fps>image_per_second if image_per_second else fps
         while success: # resimleri bitene kadar devam eder
             # görsel kaydedilir.
-            if(count%round(fps/image_per_second) !=  0):
+            if(count%round(fps/t_image_per_second) !=  0):
                 cv2.imwrite(f"{video_save_folder}/{video_name}_{count}.jpg", 
                         image)     # save frame as JPEG file
             #sonraki görsel okunur.
