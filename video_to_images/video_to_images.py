@@ -4,9 +4,11 @@ from pathlib import Path
 videos_path = "./videos"
 save_folder = "./pictures"
 image_per_second = 1
+
+
+(major_ver, minor_ver, subminor_ver) = (cv2.__version__).split('.')
 if image_per_second <= 0:
     image_per_second = 1
-(major_ver, minor_ver, subminor_ver) = (cv2.__version__).split('.')
 
 for video_path in os.listdir(videos_path):
     try:  # video klasöründe video harici bir dosya varsa hata verebilir işlemlerin iptal edilmemesi için try catch
