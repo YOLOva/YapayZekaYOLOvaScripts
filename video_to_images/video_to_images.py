@@ -26,7 +26,7 @@ for video_path in os.listdir(videos_path):
         Path(video_save_folder).mkdir(exist_ok=True) # kaydedilecek klasör yoksa oluşturur.
         while success: # resimleri bitene kadar devam eder
             # görsel kaydedilir.
-            if(count%fps !=  0):
+            if(count%round(fps/image_per_second) !=  0):
                 cv2.imwrite(f"{video_save_folder}/{video_name}_{count}.jpg", 
                         image)     # save frame as JPEG file
             #sonraki görsel okunur.
