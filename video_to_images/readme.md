@@ -6,3 +6,10 @@ Görsellerine ayrıştırmak istediğiniz videoları videos klasörüne atın ve
 oluşan resimlere pictures klasörü içerisinden ulaşılabilir.
 ## çalıştırmak için komut
 python video_to_images.py
+
+# default olarak saniyede 1 frame almak için ayarlıdır.
+video_to_images.py dosyasındaki
+
+images_per_second = 1
+
+satırını arttırarak bu frame sayısını arttırabilirsiniz.
