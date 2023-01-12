@@ -3,9 +3,9 @@ import os
 from pathlib import Path
 
 
-labels_folder = "D:/Teknofest/YOLOVA/Veriseti/Visdrone2019/VisDrone2019-DET-test-dev/labels_vis"
-output_folder = "D:/Teknofest/YOLOVA/Veriseti/Visdrone2019/VisDrone2019-DET-test-dev/labels"
-label_map_file = "./label_map_visdrone2019.txt"
+labels_folder = "D:/Teknofest/YOLOVA/Veriseti/Visdrone2019/VisDrone2019-DET-test-dev/labels_vis" #input
+output_folder = "D:/Teknofest/YOLOVA/Veriseti/Visdrone2019/VisDrone2019-DET-test-dev/labels" #output
+label_map_file = "./label_map_uyz_2023.txt"
 
 # txt dosyasından map listesi çeker
 with open(label_map_file, "r") as file:
