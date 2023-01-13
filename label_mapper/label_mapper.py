@@ -1,10 +1,19 @@
 
 import os
 from pathlib import Path
+import sys
 
 
-labels_folder = "D:/Teknofest/YOLOVA/Veriseti/Visdrone2019/VisDrone2019-DET-test-dev/labels_vis" #input
-output_folder = "D:/Teknofest/YOLOVA/Veriseti/Visdrone2019/VisDrone2019-DET-test-dev/labels" #output
+if len(sys.argv) < 2:
+    print("eksik parametre")
+    exit()
+
+labels_folder = sys.argv[1]  # "D:/Teknofest/YOLOVA/Veriseti/Visdrone2019Det"
+if not Path(labels_folder).is_dir():
+    print("hatalı dizin")
+    exit()
+"""labels_folder = "D:/Teknofest/YOLOVA/Veriseti/New/spat_data/labels_old" #input
+output_folder = "D:/Teknofest/YOLOVA/Veriseti/New/spat_data/labels" #output"""
 label_map_file = "./label_map_uyz_2023.txt"
 
 # txt dosyasından map listesi çeker
@@ -30,7 +39,8 @@ for label_file_name in labels_file_names:
             if class_map[int(cls)] == "-1":
                 continue
             lines.append(line.replace(cls, class_map[int(cls)], 1))
+    output_folder = labels_folder+"_new"
 
-    Path(output_folder).mkdir(exist_ok=True)
+    Path(labels_folder+"_new").mkdir(exist_ok=True)
     with open(f"{output_folder}/{label_file_name}", 'w') as file:
         file.writelines(lines)
