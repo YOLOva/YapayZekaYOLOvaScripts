@@ -1,0 +1,6 @@
+Taşıt
+İnsan
+UAP_Positif
+UAP_Negative
+UAİ_Positif
+UAİ_Negative
