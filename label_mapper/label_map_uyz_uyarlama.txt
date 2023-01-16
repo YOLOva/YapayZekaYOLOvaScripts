@@ -1,6 +1,6 @@
-Taşıt
-İnsan
-UAP_Positif
-UAP_Negative
-UAİ_Positif
-UAİ_Negative
+5 Taşıt
+0 İnsan
+3 UAP_Positif
+4 UAP_Negative
+1 UAİ_Positif
+2 UAİ_Negative
