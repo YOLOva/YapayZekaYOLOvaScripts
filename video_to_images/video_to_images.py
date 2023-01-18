@@ -1,8 +1,8 @@
 import os
 import cv2
 from pathlib import Path
-videos_path = "./videos"
-save_folder = "./pictures"
+videos_path = "video_to_images/videos"
+save_folder = "video_to_images/pictures"
 image_per_second = 1
 
 
@@ -34,7 +34,7 @@ for video_path in os.listdir(videos_path):
         t_image_per_second = fps > image_per_second if image_per_second else fps
         while success:  # resimleri bitene kadar devam eder
             # görsel kaydedilir.
-            if(count % round(fps/t_image_per_second) != 0):
+            if(count % round(fps/t_image_per_second) == 0):
                 cv2.imwrite(f"{video_save_folder}/{video_name}_{count}.jpg",
                             image)     # save frame as JPEG file
             # sonraki görsel okunur.
