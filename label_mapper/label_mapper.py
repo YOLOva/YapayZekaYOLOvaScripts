@@ -18,6 +18,7 @@ def run(
         print("hatalı labels_folder dizin")
         exit()
 
+    Path(output_folder).mkdir(exist_ok=True, parents=True)
     if output_folder == "":
         output_folder = labels_folder+"_new"
         
@@ -32,6 +33,8 @@ def run(
     # txt dosyasından map listesi çeker
     with open(label_map_file, "r") as file:
         lines = file.readlines()
+    
+    Path(output_folder).mkdir(exist_ok=True)
 
     class_map = []
     for line in lines:
@@ -53,7 +56,6 @@ def run(
                     continue
                 lines.append(line.replace(cls, class_map[int(cls)], 1))
 
-        Path(labels_folder+"_new").mkdir(exist_ok=True)
         with open(f"{output_folder}/{label_file_name}", 'w') as file:
             file.writelines(lines)
 
