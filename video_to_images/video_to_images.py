@@ -3,7 +3,7 @@ import cv2
 from pathlib import Path
 videos_path = "video_to_images/videos"
 save_folder = "video_to_images/pictures"
-image_per_second = 1
+image_per_second = 2
 
 
 (major_ver, minor_ver, subminor_ver) = (cv2.__version__).split('.')
@@ -28,10 +28,10 @@ for video_path in os.listdir(videos_path):
         video_name = Path(video_path).stem  # video ismi alınır kaydetmek için
         count = 0  # sayıcı
         # resimleri kaydetme klasörü
-        video_save_folder = f"{save_folder}/{video_name}"
+        video_save_folder = f"{save_folder}/{video_name}/images"
         # kaydedilecek klasör yoksa oluşturur.
         Path(video_save_folder).mkdir(exist_ok=True, parents=True)
-        t_image_per_second = fps > image_per_second if image_per_second else fps
+        t_image_per_second = image_per_second if fps > image_per_second else fps
         while success:  # resimleri bitene kadar devam eder
             # görsel kaydedilir.
             if(count % round(fps/t_image_per_second) == 0):
