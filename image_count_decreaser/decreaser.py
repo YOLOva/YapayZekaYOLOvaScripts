@@ -1,19 +1,16 @@
 import os
 import shutil
-from sys import argv
-
-# path = "./images"
-if len(argv)<2 or argv[1] == "":
-    print("eksik parametre")
-    exit()
-
-path = argv[1]
-save_path = "./decreased"
-fps = 30
-
-image_list = os.listdir(path)
-for index, image_path in enumerate(image_list):
-    destination = f"{save_path}/{image_path}"
-    image_path = f"{path}/{image_path}"
-    if(index % fps == 0):
-        shutil.copyfile(image_path, destination)
+from pathlib import Path
+reduce_folder = r"D:\Teknofest\YOLOVA\Veriseti\auair\auairuyz"
+save_folder = r"D:\Teknofest\YOLOVA\Veriseti\auair\auairuyz_azaltildi"
+reduced_list = sorted(os.listdir(reduce_folder+"/images"))
+for i in range(4):
+  reduced_list = [x for index, x in enumerate(reduced_list) if index%2==0]
+for image_name  in reduced_list:
+  Path(save_folder+"/labels/").mkdir(exist_ok=True, parents=True)
+  Path(save_folder+"/images/").mkdir(exist_ok=True, parents=True)
+  try:
+    shutil.copy(reduce_folder+"/labels/"+Path(image_name).stem+".txt", save_folder+"/labels/"+Path(image_name).stem+".txt")
+    shutil.copy(reduce_folder+"/images/"+image_name, save_folder+"/images/"+image_name)
+  except:
+    pass
