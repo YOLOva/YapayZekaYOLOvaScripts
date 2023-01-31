@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 import shutil
 import sys
-
+from os.path import exists
 if len(sys.argv)<2:
     print("eksik parametre")
     exit()
@@ -29,6 +29,6 @@ for lc in look_to_clean:
             continue
         look_path = f"{lc[1]}/{Path(cl_name).stem}.{lc[3]}"
         cl_path = f"{lc[0]}/{cl_name}"
-        if not Path(look_path).is_file():
+        if not exists(look_path):
             Path(lc[4]).mkdir(parents=True, exist_ok=True)
             shutil.move(cl_path, f"{lc[4]}/{cl_name}")
