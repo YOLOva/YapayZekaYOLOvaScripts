@@ -31,11 +31,13 @@ def image_resize(image, width = None, height = None, inter = cv2.INTER_AREA):
     # return the resized image
     return resized
 
-images_path=r"D:\Teknofest\YOLOVA\Veriseti\frame_devrim_last_azaltildi\images"
+images_path=r"D:\Teknofest\YOLOVA\Veriseti\video4\images"
 
 for path in list(Path(images_path).glob("**/*.jpg")):
     path = str(path)
     frame = image_resize(cv2.imread(str(path)), width=1920)
-    cv2.imwrite(path.replace("\\", "/").replace("/images/", "/images_fixed/"),frame)
+    new_path=path.replace("\\", "/").replace("/images/", "/images_fixed/")
+    Path(new_path).parent.mkdir(parents=True, exist_ok=True)
+    cv2.imwrite(new_path,frame)
     
     

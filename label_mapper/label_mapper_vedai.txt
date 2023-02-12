@@ -1,0 +1,15 @@
+5 car 5
+8 truck 8
+-1 notfound -1
+9 tracktor 9
+-1 camping -1
+-1 notfound1 -1
+6 motorcycle 6
+5 van 5
+9 other 9
+8 pickup 8
+-1 notfound3 -1
+-1 notfound2 -1
+-1 plane -1
+11 boat 10
+7 bus 7

@@ -63,9 +63,9 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--labels_folder', type=str, help='label klasörü dizini', required=True)
-    parser.add_argument('--output_folder', default="", type=str, help='çıktı klasör dizini')
-    parser.add_argument('--label_map_file', type=str, default="./label_map_uyz_2023.txt")
+    parser.add_argument('--labels-folder', type=str, help='label klasörü dizini', required=True)
+    parser.add_argument('--output-folder', default="", type=str, help='çıktı klasör dizini')
+    parser.add_argument('--label-map-file', type=str, default="./label_map_uyz_2023.txt")
     opt = parser.parse_args()
     return opt
 

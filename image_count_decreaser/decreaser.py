@@ -1,10 +1,10 @@
 import os
 import shutil
 from pathlib import Path
-reduce_folder = r"D:\Teknofest\YOLOVA\Veriseti\auair\auairuyz"
-save_folder = r"D:\Teknofest\YOLOVA\Veriseti\auair\auairuyz_azaltildi"
+reduce_folder = r"D:\Teknofest\YOLOVA\Veriseti\auair\auairuyz_azaltildi"
+save_folder = r"D:\Teknofest\YOLOVA\Veriseti\auair\auairuyz_azaltildix2"
 reduced_list = sorted(os.listdir(reduce_folder+"/images"))
-for i in range(4):
+for i in range(2):
   reduced_list = [x for index, x in enumerate(reduced_list) if index%2==0]
 for image_name  in reduced_list:
   Path(save_folder+"/labels/").mkdir(exist_ok=True, parents=True)
