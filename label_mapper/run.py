@@ -1,7 +1,7 @@
+import os
+from change_classes_txt import run
 
-from label_mapper import run
-
-
-run(r"D:\Teknofest\YOLOVA\Veriseti\Visdrone2019-Det\Visdrone2019-Det_part9\labels", r"D:\Teknofest\YOLOVA\Veriseti\Visdrone2019-Det\Visdrone2019-Det_part9\new_labels", "classes.txt")
+data_set=r"D:\Teknofest\YOLOVA\Veriseti\KontrolEdildi\Normal"
+run(data_set, r"label_mapper\classes2.txt")
 
 

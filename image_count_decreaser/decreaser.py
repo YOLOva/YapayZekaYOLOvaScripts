@@ -1,8 +1,8 @@
 import os
 import shutil
 from pathlib import Path
-reduce_folder = r"D:\Teknofest\YOLOVA\Veriseti\auair\auairuyz_azaltildi"
-save_folder = r"D:\Teknofest\YOLOVA\Veriseti\auair\auairuyz_azaltildix2"
+reduce_folder = r"D:\Teknofest\YOLOVA\Veriseti\video\asonra\pedestrians"
+save_folder = f"{reduce_folder}_azaltildi"
 reduced_list = sorted(os.listdir(reduce_folder+"/images"))
 for i in range(2):
   reduced_list = [x for index, x in enumerate(reduced_list) if index%2==0]
