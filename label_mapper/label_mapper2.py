@@ -28,8 +28,26 @@ def run(
     class_map = []
     for line in lines:
         class_map.append(line.split()[0])
-    print(class_map)
+    def create_classes_txt():
+        max_cls=max([int(line.split()[0]) for line in lines])
+        class_name_map = ["" for i in range(max_cls+1)]
+        for line in lines:
+            cls, name=line.strip().split()
+            class_name_map[int(cls)]=name+"\n"
+            
+        print(class_name_map)
+        print("max", max_cls)
 
+        for label_path in Path(labels_folder).glob("**/classes.txt"):
+            with open(label_path, 'w') as file:
+                file.writelines(class_name_map)
+    create_classes_txt()
+    print(class_map)
+    
+    class_map = []
+    for line in lines:
+        class_map.append(line.split()[0])
+        
     for label_path in Path(labels_folder).glob("**/*.txt"):
         if 'classes.txt' in str(label_path):
             continue
